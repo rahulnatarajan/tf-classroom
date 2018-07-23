@@ -2,15 +2,6 @@ provider "aws" {
   region     = "${var.region}"
 }
 
-terraform {
-  backend "s3" {
-    bucket = "scbdemo"
-    key = "scbclass.tfstate"
-    encrypt = "true"
-    region = "ap-southeast-1"
-  }
-}
-
 
 resource "aws_instance" "example" {
   ami           = "${var.ami}"
