@@ -19,5 +19,5 @@ variable "key_name" {
 }
 
 variable "name_value" {
-  default = "terraform-scb-test"
+  default = "terraform-scb-test-23July"
 }
