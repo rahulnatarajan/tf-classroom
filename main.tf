@@ -2,6 +2,16 @@ provider "aws" {
   region     = "${var.region}"
 }
 
+terraform {
+  backend "s3" {
+    bucket = "${var.bucket}"
+    key = "${var.key}"
+    encrypt = "true"
+    region = "${var.region}"
+  }
+}
+
+
 resource "aws_instance" "example" {
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
@@ -15,3 +25,4 @@ resource "aws_instance" "example" {
 resource "aws_eip" "ip" {
   instance = "${aws_instance.example.id}"
 }
+
