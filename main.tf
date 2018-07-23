@@ -4,10 +4,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "${var.bucket}"
-    key = "${var.key}"
+    bucket = "scbdemo"
+    key = "scbclass.tfstate"
     encrypt = "true"
-    region = "${var.region}"
+    region = "ap-southeast-1"
   }
 }
 
